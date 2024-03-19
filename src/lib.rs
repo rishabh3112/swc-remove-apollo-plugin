@@ -25,7 +25,7 @@ impl VisitMut for TransformVisitor {
             match module_node {
                 ModuleItem::ModuleDecl(ref mut node) => match node {
                     ModuleDecl::Import(ref mut node) => {
-                        let imports_to_replace = vec!["useQuery", "useMutation"];
+                        let imports_to_replace = vec!["useQuery", "useMutation", "gql"];
                         let path = node.src.value.to_string();
 
                         if path.eq("@apollo/client") {
